@@ -1,0 +1,289 @@
+
+/*****************************
+        Core css
+******************************/
+#fdquick-viewmodal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    background-color: transparent;
+    overflow-y: auto;
+}
+
+#fdquick-viewmodal.storquickview-open {
+    opacity: 1;
+    visibility: visible;
+    background-color: rgba(0, 0, 0, 0.75);
+}
+
+#fdquick-viewmodal .fdqvcloseqv {
+    background: transparent none repeat scroll 0 0;
+    color: #000;
+    height: inherit;
+    line-height: inherit;
+    padding: 0;
+    position: absolute;
+    right: 15px;
+    top: 5px;
+    cursor: pointer;
+    display: none;
+    font-size: 20px;
+
+}
+
+#fdquick-viewmodal .fdqv-modal-dialog {
+    max-width: 960px;
+    padding: 35px;
+    width: 100%;
+    position: relative;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease 0s;
+    border-radius: 10px;
+}
+
+#fdquick-viewmodal.storquickview-open .fdqv-modal-dialog {
+    opacity: 1;
+    visibility: visible;
+    transition: all 0.3s ease 0.3s
+}
+
+.stds-css {
+    display: flex;
+    justify-content: center;
+}
+
+@keyframes stds-ripple {
+    0% {
+        top: 96px;
+        left: 96px;
+        width: 0;
+        height: 0;
+        opacity: 1;
+    }
+    100% {
+        top: 18px;
+        left: 18px;
+        width: 156px;
+        height: 156px;
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes stds-ripple {
+    0% {
+        top: 96px;
+        left: 96px;
+        width: 0;
+        height: 0;
+        opacity: 1;
+    }
+    100% {
+        top: 18px;
+        left: 18px;
+        width: 156px;
+        height: 156px;
+        opacity: 0;
+    }
+}
+
+.stds-ripple {
+    position: relative;
+}
+
+.stds-ripple div {
+    box-sizing: content-box;
+    position: absolute;
+    border-width: 4px;
+    border-style: solid;
+    opacity: 1;
+    border-radius: 50%;
+    -webkit-animation: stds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+    animation: stds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+
+.stds-ripple div:nth-child(1) {
+    border-color: #000;
+}
+
+.stds-ripple div:nth-child(2) {
+    border-color: #fff;
+    -webkit-animation-delay: -0.5s;
+    animation-delay: -0.5s;
+}
+
+.stds-ripple {
+    width: 200px !important;
+    height: 200px !important;
+    -webkit-transform: translate(-100px, -100px) scale(1) translate(100px, 100px);
+    transform: translate(-100px, -100px) scale(1) translate(100px, 100px);
+}
+
+.woocommerce div.product .content-storquickview .product_title {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 45px;
+    line-height: 1.22em;
+    letter-spacing: 0;
+}
+.woocommerce .content-storquickview .woocommerce-product-rating .star-rating {
+    margin: 12px 4px 0 0;
+
+}
+
+.st-quick-view-thumbnails {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+
+}
+.st-quick-thumb-single {
+    cursor: pointer;
+    margin-top: 10px;
+    padding-right: 0px;
+    padding-left: 10px;
+}
+.woocommerce .product .product_meta {
+    flex-wrap: wrap;
+}
+
+.woocommerce .product .product_meta>span {
+    flex: 0 0 33.3333%;
+    width: 33.3333%;
+    flex-wrap: wrap;
+}
+.woocommerce .quantity {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    width: 153px;
+    min-height: 50px;
+    margin: 0px;
+    border: 1px solid #B9C1D9;
+    border-radius: 50px;
+}
+
+.woocommerce-cart .woocommerce .quantity span.stor-qty-counter {
+    width: 38px;
+    height: 38px;
+    text-align: center;
+    font-size: 22px!important;
+    font-weight: 600;
+    border-radius: 50%;
+    line-height: 38px!important;
+    cursor: pointer;
+}
+
+
+@media only screen and (min-width: 767px) {
+    .woocommerce .quantity {
+        margin: initial;
+    }
+}
+
+.woocommerce-cart .woocommerce-cart-form table.shop_table tbody td.actions button {
+    border: 2px solid var(--accent-color-2);
+    background: transparent;
+    opacity: 1;
+    border-radius: 50px !important;
+    font-weight: 700;
+    min-width: 184px;
+    min-height: 60px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 26px;
+    text-align: center;
+    letter-spacing: 0.5px;
+    color: var(--accent-color-2);
+    text-transform: capitalize;
+    padding: 0px;
+}
+
+.woocommerce .qty-label {
+    float: left;
+    margin-right: 10px;
+    font-size: 17px;
+    color: #6e727d;
+}
+.woocommerce div.quantity input.qty {
+    color: var(--heading-color);
+    width: 45px;
+    padding: 0;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 30px;
+    height: 30px;
+    border: none;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    border-radius: 0;
+    background-color: transparent !important;
+    outline: 0px;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.woocommerce .quantity .qty {
+    width: 3.631 em;
+    text-align: center;
+}
+.quantity span.stor-qty-counter {
+    width: 40px;
+    height: 25px;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 600;
+    display: inline-block;
+    border-radius: 50%;
+    line-height: 20px;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.quantity span.stor-qty-dec-btn {
+    order: -5;
+    margin-right: 10px;
+}
+
+.quantity span.stor-qty-inc-btn.stor-qty-counter {
+    margin-left: 10px;
+}
+a.storquickview svg {
+    margin-right: 5px;
+}
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+    #fdquick-viewmodal .fdqv-modal-dialog {
+        top: 50%;
+        height: 950px;
+        overflow-x: hidden;
+    }
+    .woocommerce .content-storquickview .product .product_meta {
+        display: block !important;
+    }
+    #fdquick-viewmodal{
+        height: auto;
+    }
+    .woocommerce div.product .content-storquickview p.price ins span.woocommerce-Price-amount.amount{
+        font-size: 25px;
+    }
+    .woocommerce .product .product_meta>span {
+        flex: 0 0 100%;
+        width: 100%;
+    }
+}
