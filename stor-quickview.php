@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	die;
 }
 
-// end if hello sakib
+// end if hello
  function stor_quick_view_missing_wc_notice() {
 
 	echo '<div class="error"><p><strong>' . sprintf( esc_html__( 'Quick View requires WooCommerce to be installed and active. You can download %s here.', 'wc_quick_view' ), '<a href="https://woocommerce.com/" target="_blank">WooCommerce</a>' ) . '</strong></p></div>';
